@@ -14,7 +14,7 @@ router.route("/").post((req, res) => {
 });
 
 router.route("/:id").put((req, res) => {
-  res.status(200).json({ message: "Get all contacts" });
+  res.status(200).json({ message: `Update contact for ${req.params.id}` });
 });
 
 router.route("/:id").delete((req, res) => {
