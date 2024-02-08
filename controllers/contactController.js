@@ -3,6 +3,11 @@ const getContacts = (req, res) => {
 };
 
 const createContact = (req, res) => {
+  const { name, email, phone } = req.body;
+  if (!name || !email || !phone) {
+    res.status(400);
+    throw new Error("All fields must be completed")
+  }
   res.status(201).json({ message: "Create a contact" });
 };
 
