@@ -18,7 +18,7 @@ const getContact = asyncHandler(async (req, res) => {
 });
 
 const updateContact = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Update contact for ${req.params.id}` });
+  res.status(200).json({ message: `Update contact wit id ${req.params.id}` });
 });
 
 const deleteContact = asyncHandler(async (req, res) => {
