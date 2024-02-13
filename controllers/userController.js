@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const User = require("../models/userModel")
+const User = require("../models/userModel");
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -16,7 +16,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-
+  console.log("Hashed Password: ", hashedPassword);
   const user = await User.create({
     username,
     email,
@@ -64,8 +64,4 @@ const currentUser = asyncHandler(async (req, res) => {
   res.json(req.user);
 });
 
-module.exports = {
-  registerUser,
-  loginUser,
-  currentUser
-};
+module.exports = { registerUser, loginUser, currentUser };
