@@ -38,6 +38,7 @@ const errorHandler = (err, req, res, next) => {
       console.log("No Error, All good !");
       break;
   }
+  next(err);
 };
 
 module.exports = errorHandler;
